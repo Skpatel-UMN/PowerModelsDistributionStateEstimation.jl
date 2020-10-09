@@ -31,6 +31,7 @@ const _PMs = PowerModels
 const _PMD = PowerModelsDistribution
 const _RAN = Random
 const _STT = Statistics
+const _PMS = PowerModelsSE
 
 # paths
 const BASE_DIR = dirname(@__DIR__)

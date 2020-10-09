@@ -7,14 +7,15 @@
 ################################################################################
 
 # using pkgs
+using Distributions
 using Ipopt, SCS
 using JuMP
-using PowerModels
-using PowerModelsDistribution
+using PowerModels, PowerModelsDistribution
 using PowerModelsSE
 using Test
 
 # pkg const
+const _DST = Distributions
 const _JMP = JuMP
 const _PMs = PowerModels
 const _PMD = PowerModelsDistribution
@@ -35,10 +36,12 @@ scs_solver = optimizer_with_attributes(SCS.Optimizer, "max_iters"=>20000, "eps"=
 
 @testset "PowerModelsSE" begin
 
+    include("distributions.jl")
     include("estimation_criteria.jl")
     include("mixed_measurements.jl")
     include("non_exact_forms.jl")
     include("power_flow.jl")
     include("with_errors.jl")
+    
 
 end
